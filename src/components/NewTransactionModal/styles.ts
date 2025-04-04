@@ -1,6 +1,56 @@
-import { styled } from "styled-components";
+import { styled, createGlobalStyle } from "styled-components";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as RadioGroup from "@radix-ui/react-radio-group";
+
+export const SelectStyles = createGlobalStyle`
+    .SelectContent {
+        background: ${props => props.theme["gray-900"]};
+        border-radius: 6px;
+        border: 0;
+        padding: 0.5rem;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        animation: slideUpAndFade 0.4s ease-out;
+        min-width: 220px;
+        z-index: 9999;
+    }
+
+    .SelectViewport {
+        padding: 0.25rem;
+    }
+
+    .SelectItem {
+        padding: 0.75rem 1rem;
+        color: ${props => props.theme["gray-300"]};
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        outline: none;
+        font-size: 1rem;
+        line-height: 1;
+
+        &:hover, &[data-highlighted] {
+            background: ${props => props.theme["gray-700"]};
+            color: ${props => props.theme.white};
+        }
+
+        & + & {
+            margin-top: 0.25rem;
+        }
+    }
+
+    @keyframes slideUpAndFade {
+        from {
+            opacity: 0;
+            transform: translateY(2px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
 
 export const Overlay = styled(Dialog.Overlay)`
     position: fixed;
@@ -62,6 +112,33 @@ export const Content = styled(Dialog.Content)`
     }
 `;
 
+export const CategoryContainer = styled.div`
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    input {
+        flex: 1;
+    }
+`;
+
+export const CategoryDropdownButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: ${props => props.theme["gray-900"]};
+    color: ${props => props.theme["gray-300"]};
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background: ${props => props.theme["gray-700"]};
+    }
+`;
+
 export const TransactionType = styled(RadioGroup.Root)`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -113,5 +190,4 @@ export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButt
             color: ${props => props.theme.white};
         }
     }
-    
 `;
