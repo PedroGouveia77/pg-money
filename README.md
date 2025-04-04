@@ -161,4 +161,4 @@ Se tiver sugestões ou melhorias, sinta-se à vontade para contribuir! 🎉
 🚀 Desenvolvido por Pedro Henrique Gouveia de Miranda Couto
 - [GitHub](https://github.com/PedroGouveia77) | [LinkedIn](www.linkedin.com/in/pedrohenriquegouveia)
 
-  ### Esse projeto foi feito durante o curso "HTTP e Performance" durante a formação de ReactJS da Rocketseat. Teve duração de 4 horas e foi concluido em 03/04/2025.
+ Esse projeto foi feito durante o curso "HTTP e Performance" durante a formação de ReactJS da Rocketseat. Teve duração de 4 horas e foi concluido em 03/04/2025.
