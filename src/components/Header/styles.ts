@@ -30,3 +30,25 @@ export const NewTransactionButton = styled.button`
         transition: background-color 0.2s;
     }
 `;
+
+export const DeleteAllButton = styled.button`
+    height: 50px;
+    border: 0;
+    background: ${props => props.theme['red-500']};
+    color: ${props => props.theme.white};
+    font-weight: bold;
+    padding: 0 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 1rem;
+
+    &:hover {
+        background: ${props => props.theme['red-700']};
+        transition: background-color 0.2s;
+    }
+`;
+
+export const ButtonsContainer = styled.div`
+    display: flex;
+    gap: 1rem;
+`;
