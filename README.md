@@ -1,54 +1,164 @@
-# React + TypeScript + Vite
+# 💰 PG Money  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="80"/>
+</p>
 
-Currently, two official plugins are available:
+PG Money é um sistema de **controle financeiro** que permite gerenciar **entradas**, **saídas** e o **saldo total** de forma prática e intuitiva.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A aplicação permite:  
+✅ Adicionar transações financeiras (entrada ou saída)  
+✅ Exibir descrição, valor, categoria e data da transação  
+✅ Filtrar transações por tipo  
+✅ Exibir o saldo total atualizado  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🌍 Acesse Online  
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+🔗 **Deploy:** [PG Money - Vercel](https://pg-money.vercel.app)  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Tecnologias Principais  
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+| Tecnologia       | Versão       | Descrição |
+|-----------------|-------------|-----------|
+| **React**      | 19.0.0       | Biblioteca para construção da UI |
+| **TypeScript** | —           | Tipagem estática para segurança e escalabilidade |
+| **Vite**       | —           | Bundler e servidor de desenvolvimento rápido |
+| **Styled Components** | —    | Estilização CSS-in-JS |
+
+---
+
+## 📦 Dependências Principais  
+
+- **@hookform/resolvers** → Validação de formulários  
+- **@radix-ui** → Componentes de UI acessíveis  
+- **react-dialog** → Modais interativos  
+- **react-radio-group** → Seleção de opções  
+- **phosphor-react** → Ícones personalizados  
+- **react-hook-form** → Gerenciamento eficiente de formulários  
+- **styled-components** → Estilização baseada em componentes  
+- **use-context-selector** → Otimização do Context API  
+- **zod** → Validação de dados  
+
+---
+
+## 🎯 Funcionalidades Implementadas  
+
+### 📊 **Gerenciamento de Transações**  
+✅ Armazenamento local usando `localStorage`  
+✅ CRUD completo (Criar, Ler, Atualizar, Deletar)  
+✅ Filtragem eficiente de transações  
+✅ Formatação automática de valores monetários e datas  
+
+### 🎨 **Interface do Usuário**  
+✅ Tema escuro personalizado  
+✅ Componentes acessíveis e reutilizáveis  
+✅ Layout **100% responsivo**  
+✅ Modais para criação de transações  
+✅ Formulários validados e amigáveis  
+
+### 🎨 **Estilização**  
+✅ **Sistema de temas** com cores personalizadas  
+✅ Estilos globais e organizados  
+✅ **Componentes estilizados** com `styled-components`  
+✅ Fonte **Roboto** do Google Fonts  
+
+---
+
+## 🏛 Arquitetura  
+
+### 🌍 **Gerenciamento de Estado com Context API**  
+🔹 **TransactionsContext**: Responsável por armazenar e gerenciar transações  
+🔹 Implementa um **Provider** para compartilhamento eficiente de estado  
+
+### 🏗 **Componentização**  
+🔹 Código modular e reutilizável  
+🔹 Separação clara de responsabilidades  
+🔹 Componentes funcionais otimizados com **hooks**  
+
+### 🎨 **Estilização Centralizada**  
+🔹 Sistema de **temas globais**  
+🔹 Variáveis de cores para consistência visual  
+🔹 Reset de estilos e configuração base  
+
+---
+
+## 🛠 Funcionalidades Específicas  
+
+### 🔢 **Formatação de Dados**  
+✅ Moeda brasileira (**R$ BRL**)  
+✅ Datas no padrão **pt-BR**  
+
+### 💾 **Armazenamento**  
+✅ Persistência local com **localStorage**  
+✅ Chave única para armazenamento: `@pg-money:transactions`  
+✅ Sincronização automática entre **estado** e **armazenamento**  
+
+### 🛡 **Validação de Formulários**  
+✅ Validação via **react-hook-form**  
+✅ Validação de dados com **zod**  
+✅ Feedback visual para erros  
+
+---
+
+## ✅ Boas Práticas Implementadas  
+
+✔ **Tipagem forte** com TypeScript  
+✔ **Componentização inteligente**  
+✔ **Gerenciamento de estado eficiente**  
+✔ **Acessibilidade e responsividade**  
+✔ **Código limpo e organizado**  
+✔ **Separação clara de responsabilidades**  
+
+---
+
+## 🔧 Configurações de Desenvolvimento  
+
+🔹 **ESLint** para linting  
+🔹 **TypeScript** configurado para React  
+🔹 **Vite** para desenvolvimento rápido  
+🔹 **Scripts npm** para diferentes tarefas  
+
+---
+
+## 🔒 Segurança e Performance  
+
+✅ **Armazenamento local seguro**  
+✅ **Otimização de re-renders** com `useCallback`  
+✅ **Lazy loading implícito** com Vite  
+✅ **Tipagem forte** para prevenir erros em runtime  
+
+---
+
+## ▶️ Como Executar o Projeto  
+
+1. Clone o repositório:  
+   ```sh
+   git clone git@github.com:PedroGouveia77/pg-money.git
+   cd pg-money
+
+2. Instale as dependências:
+   ```sh
+   npm install
+
+3. Execute o projeto:
+   ```sh
+   npm run dev
+
+A aplicação estará disponível em http://localhost:5173 🚀
+
+
+---
+
+## 📝 Considerações Finais
+Este projeto foi desenvolvido para facilitar o controle financeiro pessoal, aplicando as melhores práticas do React para garantir escalabilidade, performance e facilidade de uso.
+
+Se tiver sugestões ou melhorias, sinta-se à vontade para contribuir! 🎉
+
+🚀 Desenvolvido por Pedro Henrique Gouveia de Miranda Couto
+- [GitHub](https://github.com/PedroGouveia77) | [LinkedIn](https://www.linkedin.com/in/pedro-henrique-gouveia-590097257/)
+
+  ### Esse projeto foi feito durante o curso "HTTP e Performance" durante a formação de ReactJS da Rocketseat. Teve duração de 4 horas e foi concluido em 03/04/2025.
