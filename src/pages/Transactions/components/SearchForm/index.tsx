@@ -26,7 +26,12 @@ export function SearchForm() {
     })
 
     async function handleSearchTransactions(data: SearchFormInputs) {
-        await fetchTransactions(data.query)
+        const searchQuery = data.query.trim();
+        if (searchQuery === '') {
+            await fetchTransactions();
+        } else {
+            await fetchTransactions(searchQuery);
+        }
     }
 
     return (

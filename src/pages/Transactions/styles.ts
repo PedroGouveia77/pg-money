@@ -35,6 +35,9 @@ interface PriceHighlightProps {
 
 export const PriceHighlight = styled.span<PriceHighlightProps>`
     color: ${props => props.variant === 'income' ? props.theme['green-300'] : props.theme['red-300']};
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 `;
 
 export const MonthSelector = styled.div`
@@ -57,9 +60,14 @@ export const MonthButton = styled.button<MonthButtonProps>`
     color: ${props => props.theme.white};
     cursor: pointer;
     transition: background-color 0.2s;
+    outline: none;
 
     &:hover {
         background: ${props => props.isSelected ? props.theme['green-700'] : props.theme['gray-500']};
+    }
+
+    &:focus {
+        box-shadow: none;
     }
 `;
 

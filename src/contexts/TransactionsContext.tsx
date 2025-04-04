@@ -46,6 +46,11 @@ const ITEMS_PER_PAGE = 5;
 export const TransactionsContext = createContextSelector<TransactionContextType>({} as TransactionContextType);
 
 export function TransactionsProvider({ children }: TransactionProviderProps) {
+    const [originalTransactions, setOriginalTransactions] = useState<Transaction[]>(() => {
+        const storedTransactions = localStorage.getItem(STORAGE_KEY);
+        return storedTransactions ? JSON.parse(storedTransactions) : [];
+    });
+
     const [transactions, setTransactions] = useState<Transaction[]>(() => {
         const storedTransactions = localStorage.getItem(STORAGE_KEY);
         return storedTransactions ? JSON.parse(storedTransactions) : [];
@@ -97,10 +102,10 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
     }, []);
 
     const fetchTransactions = useCallback(async (query?: string) => {
-        let filteredTransactions = transactions;
+        let filteredTransactions = originalTransactions;
         
         if (query) {
-            filteredTransactions = transactions.filter(transaction => 
+            filteredTransactions = originalTransactions.filter(transaction => 
                 transaction.description.toLowerCase().includes(query.toLowerCase()) ||
                 transaction.category.toLowerCase().includes(query.toLowerCase())
             );
@@ -108,7 +113,7 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
 
         setTransactions(filteredTransactions);
         setGroupedTransactions(groupTransactionsByMonth(filteredTransactions));
-    }, [transactions, groupTransactionsByMonth]);
+    }, [originalTransactions, groupTransactionsByMonth]);
 
     const createTransaction = useCallback(async (data: CreateTransactionInput) => {
         const { description, price, category, type } = data;
@@ -121,20 +126,23 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
             createdAt: new Date().toISOString(),
         };
 
-        const updatedTransactions = [newTransaction, ...transactions];
+        const updatedTransactions = [newTransaction, ...originalTransactions];
+        setOriginalTransactions(updatedTransactions);
         setTransactions(updatedTransactions);
         setGroupedTransactions(groupTransactionsByMonth(updatedTransactions));
         localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedTransactions));
-    }, [transactions, groupTransactionsByMonth]);
+    }, [originalTransactions, groupTransactionsByMonth]);
 
     const deleteTransaction = useCallback((id: number) => {
-        const updatedTransactions = transactions.filter(transaction => transaction.id !== id);
+        const updatedTransactions = originalTransactions.filter(transaction => transaction.id !== id);
+        setOriginalTransactions(updatedTransactions);
         setTransactions(updatedTransactions);
         setGroupedTransactions(groupTransactionsByMonth(updatedTransactions));
         localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedTransactions));
-    }, [transactions, groupTransactionsByMonth]);
+    }, [originalTransactions, groupTransactionsByMonth]);
 
     const clearTransactions = useCallback(() => {
+        setOriginalTransactions([]);
         setTransactions([]);
         setGroupedTransactions({});
         localStorage.removeItem(STORAGE_KEY);
