@@ -25,9 +25,9 @@ A aplicação permite:
 | Tecnologia       | Versão       | Descrição |
 |-----------------|-------------|-----------|
 | **React**      | 19.0.0       | Biblioteca para construção da UI |
-| **TypeScript** | —           | Tipagem estática para segurança e escalabilidade |
-| **Vite**       | —           | Bundler e servidor de desenvolvimento rápido |
-| **Styled Components** | —    | Estilização CSS-in-JS |
+| **TypeScript** | 5.7.2           | Tipagem estática para segurança e escalabilidade |
+| **Vite**       | 6.2.0           | Bundler e servidor de desenvolvimento rápido |
+| **Styled Components** | 6.1.17    | Estilização CSS-in-JS |
 
 ---
 
