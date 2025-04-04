@@ -23,11 +23,11 @@ A aplicação permite:
 ## 🚀 Tecnologias Principais  
 
 | Tecnologia       | Versão       | Descrição |
-|-----------------|-------------|-----------|
-| **React**      | 19.0.0       | Biblioteca para construção da UI |
-| **TypeScript** | 5.7.2           | Tipagem estática para segurança e escalabilidade |
-| **Vite**       | 6.2.0           | Bundler e servidor de desenvolvimento rápido |
-| **Styled Components** | 6.1.17    | Estilização CSS-in-JS |
+|------------------|--------------|-----------|
+| **React**         | 19.0.0       | Biblioteca para construção da UI |
+| **TypeScript**    | 5.7.2        | Tipagem estática para segurança e escalabilidade |
+| **Vite**          | 6.2.0        | Bundler e servidor de desenvolvimento rápido |
+| **Styled Components** | 6.1.17   | Estilização CSS-in-JS |
 
 ---
 
@@ -52,13 +52,25 @@ A aplicação permite:
 ✅ CRUD completo (Criar, Ler, Atualizar, Deletar)  
 ✅ Filtragem eficiente de transações  
 ✅ Formatação automática de valores monetários e datas  
+✅ Agrupamento de transações por mês  
+✅ Filtro por mês  
+✅ Busca por descrição ou categoria  
 
-### 🎨 **Interface do Usuário**  
-✅ Tema escuro personalizado  
-✅ Componentes acessíveis e reutilizáveis  
-✅ Layout **100% responsivo**  
-✅ Modais para criação de transações  
-✅ Formulários validados e amigáveis  
+### 📄 **Persistência de Dados**  
+✅ Usando `localStorage` para salvar as transações  
+✅ Dados permanecem mesmo após fechar o navegador  
+
+### 🧹 **Organização e Exclusão**  
+✅ Excluir transações individuais com modal de confirmação  
+✅ Excluir todas as transações com modal de confirmação  
+✅ Transações ordenadas por data (mais recentes primeiro)  
+
+### 📚 **Interface Amigável**  
+✅ Paginação para melhor visualização  
+✅ 5 transações por página  
+✅ Navegação entre páginas  
+✅ Indicador de página atual  
+✅ Modais de confirmação para ações destrutivas  
 
 ### 🎨 **Estilização**  
 ✅ **Sistema de temas** com cores personalizadas  
